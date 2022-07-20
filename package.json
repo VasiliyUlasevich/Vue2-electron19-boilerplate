@@ -1,0 +1,47 @@
+{
+  "name": "el19-vue2",
+  "version": "1.0.0",
+  "description": "Electron 19 + Vue 2 boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "build-dev": "webpack --mode=development",
+    "build-prod": "webpack --mode=production",
+    "watch": "webpack --watch --mode=development",
+    "build-linux": "electron-builder --linux",
+    "build-win": "electron-builder --win",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vasily Ulasevich",
+  "license": "MIT",
+  "devDependencies": {
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.1",
+    "electron": "^19.0.8",
+    "electron-builder": "^23.1.0",
+    "mini-css-extract-plugin": "^2.6.1",
+    "style-loader": "^3.3.1",
+    "vue": "^2.7.7",
+    "vue-loader": "^15.10.0",
+    "vue-template-compiler": "^2.7.7",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "build": {
+    "appId": "el19-vue2-app",
+    "productName": "el19-vue2-app",
+    "directories": {
+      "output": "out"
+    },
+    "asar": true,
+    "linux": {
+      "target": "AppImage"
+    },
+    "files": [
+      "!**/src/**/*",
+      "!webpack.config.js",
+      "!.babelrc",
+      "!**/.git/**/*"
+    ]
+  }
+}
