@@ -8,4 +8,4 @@ Electron 19 with Vue-2 start template (+ webpack 5)
 * npm start - run application
 * npm run build-linux - make linux portable app
 * npm run build-win - make windows portable app
-
+* npm test - run tests
