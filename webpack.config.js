@@ -5,9 +5,10 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = (env, argv) => {
-    let devMode = argv.mode !== "production";
+    let devMode = argv ? argv.mode !== "production" : true;
 
     const config = {
+        mode: devMode ? 'development' : 'production',
         entry: "./src/js/main.js",
         output: {
             path: path.resolve(__dirname, "dist"),
@@ -55,8 +56,8 @@ module.exports = (env, argv) => {
         resolve: {
             alias: {
                 vue: 'vue/dist/vue.esm.js',
-            }
-        }
+            },
+        },
     };
 
     return config;

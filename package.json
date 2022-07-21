@@ -2,19 +2,22 @@
   "name": "el19-vue2",
   "version": "1.0.0",
   "description": "Electron 19 + Vue 2 boilerplate",
-  "main": "index.js",
-  "scripts": {
-    "start": "electron .",
-    "build-dev": "webpack --mode=development",
-    "build-prod": "webpack --mode=production",
-    "watch": "webpack --watch --mode=development",
-    "build-linux": "electron-builder --linux",
-    "build-win": "electron-builder --win",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "Vasily Ulasevich",
-  "license": "MIT",
+  "scripts": {
+    "test": "vue-cli-service test:unit --testMatch=**/*.test.js",
+    "build-dev": "webpack --mode=development",
+    "build-linux": "electron-builder --linux",
+    "build-prod": "webpack --mode=production",
+    "build-win": "electron-builder --win",
+    "start": "electron .",
+    "watch": "webpack --watch --mode=development"
+  },
+  "main": "index.js",
   "devDependencies": {
+    "@vue/cli": "^5.0.8",
+    "@vue/cli-plugin-unit-jest": "~4.5.13",
+    "@vue/cli-service": "^4.5.19",
+    "@vue/test-utils": "^1.3.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
     "electron": "^19.0.8",
@@ -43,5 +46,6 @@
       "!.babelrc",
       "!**/.git/**/*"
     ]
-  }
+  },
+  "license": "MIT"
 }
